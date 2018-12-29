@@ -1,4 +1,4 @@
-# librarymangment
+# Librarymangment
 A simple Library Managment class made in python and made by Nikhil Raj Pandey
 <br>
 # What I do in this Code ?
