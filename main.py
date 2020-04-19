@@ -7,23 +7,23 @@ class Library():
 
         # adding books to dictionary
         for books in self.list_of_books:
-            # none means No author have lend this book
+            # none means No reader have lend this book
             self.lend_data[books] = None
 
     def display_books(self):
         for index,books in enumerate(self.list_of_books):
-            print(f"{index}){books}")
+            print(f"{index}:{books}")
 
-    def lend_book(self,book,author):
+    def lend_book(self,book,reader):
         if book in self.list_of_books:
             if self.lend_data[book] is None:
-                self.lend_data[book] = author
+                self.lend_data[book] = reader
             else:
                 print(f"Sorry This book is lend by {self.lend_data[book]}")
         else:
             print("You have written wrong book name")
 
-    def return_book(self,book,author):
+    def return_book(self,book,reader):
         if book in self.list_of_books:
             if self.lend_data[book] is not None:
                 self.lend_data.pop(book)
