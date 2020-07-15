@@ -42,7 +42,7 @@ class Library():
 
 def main():
     # By deafault variables
-    list_books = ['Cookbook','Motu Patlu','Chacha_chaudhary','Rich Dad and Poor Dad']
+    list_books = ['Cookbook','Sherlock Holmes','Chacha_chaudhary','Rich Dad and Poor Dad']
     Library_name = 'Harry'
     secret_key = 123456
 
