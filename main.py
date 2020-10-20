@@ -1,3 +1,11 @@
+from win32com.client import Dispatch
+def speak(str):
+    speak = Dispatch(("SAPI.SpVoice"))
+    speak.Speak(str)
+if __name__ == '__main__':
+    speak("Hallow sir Welcome to my library")
+    #speak("Choose your favourite books")
+    speak("You are in right place to find your favourite books")
 class Library():
     def __init__(self,list_of_books,Library_name):
         # creating a dictionary of all books keys
@@ -47,7 +55,8 @@ def main():
     secret_key = 123456
 
     Harry = Library(list_books,Library_name)
-
+    
+    speak(f"Welecome To {Harry.library_name}")
     print(f"Welecome To {Harry.library_name} library\n\nq for exit \nDisplay Book Using 'd' and add lend book using 'l' and Return a Book using 'r' \nAdd Book Using 'a' and Delete Book using 'del' \n ")
 
     Exit = False
@@ -62,7 +71,9 @@ def main():
             Harry.display_books()
 
         elif _input == "l":
+            speak("What is your name")
             _input2 = input("What is your name:")
+            speak("Which Book Do you want to lend")
             _input3 = input("Which Book Do you want to lend:")
             print("\n Book Lend \n")
             Harry.lend_book(_input3,_input2)
@@ -72,15 +83,20 @@ def main():
             Harry.add_book(_input2)
 
         elif _input == "del":
+            speak("Write the secret key to delete")
             _input_secret = int(input("Write the secret key to delete:"))
             if (_input_secret == secret_key):
+                speak("Book Which you want to delete")
                 _input2 = input("Book Which you want to delete:")
                 Harry.delete_book(_input2)
             else:
+                speak("Sorry We can't Delete the Book")
                 print("Sorry We can't Delete the Book")
 
         elif _input == "r":
+            speak("What is your name")
             _input2 = input("What is your name:")
+            speak("Which Book Do you want to return")
             _input3 = input("Which Book Do you want to return:")
             Harry.return_book(_input3,_input2)
 
