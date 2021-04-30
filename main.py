@@ -18,6 +18,7 @@ class Library():
         if book in self.list_of_books:
             if self.lend_data[book] is None:
                 self.lend_data[book] = reader
+                print("Book Lend")
             else:
                 print(f"Sorry This book is lend by {self.lend_data[book]}")
         else:
@@ -64,7 +65,7 @@ def main():
         elif _input == "l":
             _input2 = input("What is your name:")
             _input3 = input("Which Book Do you want to lend:")
-            print("\n Book Lend \n")
+            
             Harry.lend_book(_input3,_input2)
 
         elif _input == "a":
